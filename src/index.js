@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import TodoList from './TodoList';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <div>
     <TodoList />
-  </React.StrictMode>,
+  </div>,
   document.getElementById('root')
 );

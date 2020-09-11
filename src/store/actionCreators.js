@@ -1,4 +1,4 @@
-const { CHANGE_INPUT_VALUE, ADD_TODO_ITEM, DELETE_TODO_ITEM } = require('./actionTypes')
+const { CHANGE_INPUT_VALUE, ADD_TODO_ITEM, DELETE_TODO_ITEM, INIT_LIST_ACTION } = require('./actionTypes')
 
 const getInputChangeAction = (value) => ({
   type: CHANGE_INPUT_VALUE,
@@ -14,8 +14,14 @@ const getDeleteItemAction = (index) => ({
   index
 })
 
+const initListAction = (data) => ({
+  type: INIT_LIST_ACTION,
+  data
+})
+
 module.exports = {
   getInputChangeAction,
   getAddItemAction,
-  getDeleteItemAction
+  getDeleteItemAction,
+  initListAction
 }
