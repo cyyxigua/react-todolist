@@ -1,5 +1,4 @@
-const axios = require('axios')
-const { CHANGE_INPUT_VALUE, ADD_TODO_ITEM, DELETE_TODO_ITEM, INIT_LIST_ACTION } = require('./actionTypes')
+const { CHANGE_INPUT_VALUE, ADD_TODO_ITEM, DELETE_TODO_ITEM, INIT_LIST_ACTION, GET_INIT_LIST } = require('./actionTypes')
 
 const getInputChangeAction = (value) => ({
   type: CHANGE_INPUT_VALUE,
@@ -20,20 +19,14 @@ const initListAction = (data) => ({
   data
 })
 
-const getTodoList = () => {
-  return (dispatch) => {
-    axios.get('/list.json').then((res) => {
-      const data = res.data
-      const action = initListAction(data)
-      dispatch(action)
-    })
-  }
-}
+const getInitList = () => ({
+  type: GET_INIT_LIST
+})
 
 module.exports = {
   getInputChangeAction,
   getAddItemAction,
   getDeleteItemAction,
   initListAction,
-  getTodoList
+  getInitList
 }
